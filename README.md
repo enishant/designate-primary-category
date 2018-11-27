@@ -1,4 +1,4 @@
-# Primary Category Project
+# Designate Primary Category
 Allows publishers to designate a primary category for posts. And query related posts according to post category on front-end.
 
 ## Query posts with default primary category
