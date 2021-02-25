@@ -1,6 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
-/*
+/**
  * Plugin Name: Primary Category Project
  * Description: Allows publishers to designate a primary category for posts. And query related posts according to post category on front-end.
  * Plugin URI: https://github.com/enishant/primary-category-project
@@ -10,14 +9,19 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *
+ * @package primary_category_project
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 define( 'PCP_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-if(file_exists(PCP_PLUGIN_PATH . 'classes/metabox.php')) {
-	include PCP_PLUGIN_PATH . 'classes/metabox.php';
+if ( file_exists( PCP_PLUGIN_PATH . 'classes/class-pcp-metabox.php' ) ) {
+	include PCP_PLUGIN_PATH . 'classes/class-pcp-metabox.php';
 	new PCP_MetaBox();
 }
-if(file_exists(PCP_PLUGIN_PATH . 'classes/shortcodes.php')) {
-	include PCP_PLUGIN_PATH . 'classes/shortcodes.php';
+if ( file_exists( PCP_PLUGIN_PATH . 'classes/class-pcp-shortcode.php' ) ) {
+	include PCP_PLUGIN_PATH . 'classes/class-pcp-shortcode.php';
 	new PCP_Shortcode();
 }
